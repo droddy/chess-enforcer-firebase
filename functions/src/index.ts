@@ -22,6 +22,7 @@ export const getNewChessBoard = functions.https.onRequest(
 export const moveChessPiece = functions.https.onRequest(
   (request, response) => {
     // fromSquare: Square, toSquare: Square, board: Board, currentTeam: Team
+    response.setHeader("Access-Control-Allow-Origin", "*");
     response.send(movePiece(
       request.body.fromSquare,
       request.body.toSquare,
