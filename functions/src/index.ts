@@ -16,6 +16,7 @@ import {getNewBoard, movePiece} from "./board-commands";
 
 export const getNewChessBoard = functions.https.onRequest(
   (_request, response) => {
+response.setHeader("Access-Control-Allow-Origin", "*");
     response.send(getNewBoard());
   });
 
